@@ -29,6 +29,6 @@
 2.2 templates
 
 Captura 1
-![alt text](image.png)
+![alt text](<Captura desde 2025-07-08 09-49-50.png>)
 Captura 2
-![alt text](image-1.png)
+![alt text](<Captura desde 2025-07-08 09-50-10.png>)
