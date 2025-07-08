@@ -14,3 +14,7 @@ Algunas parte del proceso son referenciados del ejemplo explicado en:
 
 * https://kodnito.com/posts/django-authentication-github/
 
+Captura 1
+![alt text](image.png)
+Captura 2
+![alt text](image-1.png)

@@ -54,6 +54,8 @@ def logout_view(request):
     messages.info(request, "Has salido del sistema")
     return redirect(index)
 
+@login_required
+@permission_required('administrativo.view_estudiante', )
 def obtener_estudiante(request, id):
     """
         Listar los registros del modelo Estudiante,
@@ -91,7 +93,10 @@ def crear_estudiante(request):
     return render(request, 'crearEstudiante.html', diccionario)
 
 
-@login_required(login_url='/entrando/login/')
+# @login_required(login_url='/entrando/login/')
+# Se comenta la linea 94 para usar el decorator @login_required sin pasar parametros
+# es una forma mas optima de asegurar los permisos que tienen o deben tener los usuarios
+@login_required
 @permission_required('administrativo.change_estudiante',)
 def editar_estudiante(request, id):
     """
@@ -109,7 +114,8 @@ def editar_estudiante(request, id):
 
     return render(request, 'editarEstudiante.html', diccionario)
 
-
+@login_required
+@permission_required('administrativo.delete_estudiante', )
 def eliminar_estudiante(request, id):
     """
     """
@@ -124,7 +130,8 @@ def en_grupo(nombre):
         return user.groups.filter(name=nombre).exists()
     return user_passes_test(predicate)
 
-@en_grupo('supervisor')
+@login_required
+@permission_required('administrativo.add', )
 def crear_numero_telefonico(request):
     """
     """
@@ -141,7 +148,8 @@ def crear_numero_telefonico(request):
 
     return render(request, 'crearNumeroTelefonico.html', diccionario)
 
-
+@login_required
+@permission_required('administrativo.change_numero_telefonico', )
 def editar_numero_telefonico(request, id):
     """
     """
