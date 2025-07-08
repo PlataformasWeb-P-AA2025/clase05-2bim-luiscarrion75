@@ -131,7 +131,7 @@ def en_grupo(nombre):
     return user_passes_test(predicate)
 
 @login_required
-@permission_required('administrativo.add', )
+@permission_required('administrativo.add_numerotelefonico', )
 def crear_numero_telefonico(request):
     """
     """
@@ -149,7 +149,7 @@ def crear_numero_telefonico(request):
     return render(request, 'crearNumeroTelefonico.html', diccionario)
 
 @login_required
-@permission_required('administrativo.change_numero_telefonico', )
+@permission_required('administrativo.change_numerotelefonico', )
 def editar_numero_telefonico(request, id):
     """
     """
