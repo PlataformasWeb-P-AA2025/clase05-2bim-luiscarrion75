@@ -27,3 +27,8 @@
 2.1 settings.py
 
 2.2 templates
+
+Captura 1
+![alt text](image.png)
+Captura 2
+![alt text](image-1.png)
